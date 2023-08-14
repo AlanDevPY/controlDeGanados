@@ -1,0 +1,7 @@
+*{
+    color: white;
+}
+body{
+    background-image: url('../img/bg-wallpeaper.jpg');
+    background-size: cover;
+}
