@@ -1,5 +1,10 @@
-let btn = document.getElementById('btn');
+let formUsername = document.getElementById('formUsername');
+let formPassword = document.getElementById('formPassword');
+let formBtn = document.getElementById('formBtn');
 
-btn.addEventListener('click', (e) => {
-    e.preventDefault()
+formBtn.addEventListener('click', (e) =>{
+    e.preventDefault();
+    let username = formUsername.value;
+    let passwrod = formPassword.value;
+    console.log(username,passwrod);
 })
