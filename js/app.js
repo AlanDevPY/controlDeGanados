@@ -20,12 +20,9 @@ btnFormRegister.addEventListener('click', (e) =>{
         password: passwordRegister
     }
 
-    let arrayDbUser = localStorage.getItem('dbUser')
-    let arrayDbUserParse = JSON.parse(arrayDbUser)
-    arrayDbUserParse.push(Users)
+    let dbUsers = JSON.parse(localStorage.setItem('dbUser'))
+    
 
-    let arrayDbUserStrinfy = JSON.stringify(arrayDbUserParse)
-    localStorage.setItem('dbUser', arrayDbUserStrinfy)
 })
 
 
@@ -45,8 +42,6 @@ btnForm.addEventListener('click', (e) =>{
     }
     formUsername.value = '';
     formPassword.value = '';
-
-
 })
 
 
