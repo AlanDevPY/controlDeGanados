@@ -16,7 +16,7 @@
       <img class="mb-4" src="https://clipart-library.com/images/kcMKg476i.png" alt="" width="72" height="87" />
       <h1 class="h3 mb-3 fw-normal">Ingrese con su usuario</h1>
       <div class="d-flex justify-content-center d-none" id="alertLogin">
-        <span class="alert alert-danger w-100">Favos de completar el campo</span>
+        <span class="alert alert-danger w-100">No puedes dejar en blanco</span>
       </div>
       <div class="form-floating">
         <input type="text" class="form-control" id="formUsername" placeholder="name@example.com" autocomplete="off" required/>
@@ -52,6 +52,9 @@
           <form class="text-center">
             <img class="mb-4" src="https://clipart-library.com/images/kcMKg476i.png" alt="" width="72" height="87" />
             <h1 class="h3 mb-3 fw-normal">Registrar Usuario</h1>
+            <div class="d-flex justify-content-center d-none" id="alertRegister">
+              <span class="alert alert-warning w-100" id="spanRegister">No puedes dejar en blanco</span>
+            </div>
             <div class="form-floating">
               <input type="text" class="form-control" id="formUsernameRegister" placeholder="name@example.com"
                 autocomplete="off" />
