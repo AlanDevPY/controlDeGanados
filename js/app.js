@@ -26,10 +26,7 @@ btnFormRegister.addEventListener("click", (e) => {
     let usernameBusqueda = usernameRegister;
     let passwordBusqueda = passwordRegister;
 
-    let userEncontrado = dbUser.find(
-      (user) =>
-        user.username === usernameBusqueda && user.password === passwordBusqueda
-    );
+    let userEncontrado = dbUser.find((user) => user.username === usernameBusqueda && user.password === passwordBusqueda);
 
         if (userEncontrado) {
             let spanRegister = document.getElementById('spanRegister')
@@ -76,15 +73,31 @@ btnFormRegister.addEventListener("click", (e) => {
 btnForm.addEventListener("click", (e) => {
   e.preventDefault();
 
-  let username = formUsername.value;
-  let password = formPassword.value;
+  let inputUsername = formUsername.value;
+  let inputPassword = formPassword.value;
 
-  if (username === "" || password === "") {
-    let alerLogin = document.getElementById("alertLogin");
-    alerLogin.classList.remove("d-none");
-  } else {
-    window.location.href = "control.html";
+  if(!(inputUsername === '' || inputPassword === '')){ // se ejecuta el codigo si el input no esta vacio
+    let dbUsers = JSON.parse(localStorage.getItem('dbUser')) 
+    let userBusqueda = dbUsers.find((user) =>user.username === inputUsername && user.password === inputPassword)
+
+      if(userBusqueda){
+        window.location.href = 'https://www.youtube.com/watch?v=uUNuDQ1JytY&ab_channel=RoseateMusic'
+      }else{
+        let alertLogin = document.getElementById('alertLogin')
+        alertLogin.classList.remove("d-none")
+        let spanLogin = document.getElementById('spanLogin')
+        spanLogin.textContent = 'Usuario no Encontrado'
+
+        formUsername.value = ''
+        formPassword.value = ''
+      }
+          
+  }else{
+    let alertLogin = document.getElementById('alertLogin')
+    alertLogin.classList.remove("d-none")
+    let spanLogin = document.getElementById('spanLogin')
+        spanLogin.textContent = 'No puedes dejar en blanco'
+        formUsername.value = ''
+        formPassword.value = ''
   }
-  formUsername.value = "";
-  formPassword.value = "";
 });
